@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AiOutlineCloud, AiOutlineReload } from 'react-icons/ai'; // Import necessary icons
+import { AiOutlineCloud, AiOutlineReload } from 'react-icons/ai';
 
 const NetworkStatus = ({ children }: any) => {
     const [isOnline, setIsOnline] = useState(window.navigator.onLine);

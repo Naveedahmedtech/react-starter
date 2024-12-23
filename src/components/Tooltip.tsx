@@ -1,8 +1,7 @@
-// Tooltip.tsx
 import React from 'react';
 import Tippy, { TippyProps } from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // Base Tippy styles
-import 'tippy.js/animations/scale.css'; // Scale animation styles
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
 
 interface TooltipProps extends TippyProps {
     content: string;

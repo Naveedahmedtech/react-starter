@@ -7,7 +7,7 @@ import image from "../../assets/images/auth/image.png";
 import { IconColors } from '../../utils/styles';
 import CommonHeader from '../components/auth/CommonHeader';
 import { useNavigate } from 'react-router-dom';
-// import { AdditionalBody } from './utils/common';
+import { AdditionalBody } from './utils/common';
 import { useLoginMutation } from '../../redux/features/authApi';
 import { updateUserData } from '../../redux/features/authSlice';
 import { useDispatch } from "react-redux";
@@ -66,7 +66,7 @@ const SignIn = () => {
         secondaryHeading="Sign In"
         paragraph="Sign in to get back to your account."
         type="sign-in"
-        // additionBody={<AdditionalBody title="Don't have an account?" action='create account' path="/auth/register" />}
+        additionBody={<AdditionalBody title="Don't have an account?" action='create account' path="/auth/register" />}
       >
         <Formik
           initialValues={{ email: '', password: '' }}

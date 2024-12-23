@@ -1,17 +1,16 @@
+// ** Routes
 import { RouterProvider } from 'react-router-dom';
-import { router } from './router/routes';
+import {router} from './router/routes';
+// ** utils
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTop from './components/ScrollToTop';
 import { useTheme } from './context/ThemeContext';
-import "./app.css"
-import 'react-datepicker/dist/react-datepicker.css'; 
-
-
+// ** CSS
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
-  <ScrollToTop />
+  <ScrollToTop /> // make sure to scorll top on every page
   const { theme } = useTheme();
   return (
     <>

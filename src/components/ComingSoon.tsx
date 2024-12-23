@@ -1,5 +1,5 @@
-import { AiOutlineClockCircle } from 'react-icons/ai'; // Clock icon for a "coming soon" theme
-import { BsFillArrowRightCircleFill } from 'react-icons/bs'; // Arrow icon for call-to-action
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 
 const ComingSoon = () => {

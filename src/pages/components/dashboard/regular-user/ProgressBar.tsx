@@ -1,5 +1,5 @@
 interface ProgressBarProps {
-    duration?: number; // optional duration for animation
+    duration?: number;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ duration = 5 }) => (

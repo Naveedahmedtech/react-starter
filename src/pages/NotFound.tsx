@@ -1,5 +1,5 @@
-import { AiOutlineHome } from 'react-icons/ai'; // A home icon for navigation
-import { BiErrorAlt } from 'react-icons/bi'; // A warning/error icon
+import { AiOutlineHome } from 'react-icons/ai';
+import { BiErrorAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {

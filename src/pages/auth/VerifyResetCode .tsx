@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import image from "../../assets/images/auth/image.png";
 import CodeVerification from '../../components/CodeVerification';
-import { useVerifyCodeMutation } from '../../redux/features/authApi'; // RTK Query Hook
-import { toast } from 'react-toastify'; // For showing error messages
+import { useVerifyCodeMutation } from '../../redux/features/authApi';
+import { toast } from 'react-toastify';
 
 const VerifyResetCode = () => {
     const navigate = useNavigate();

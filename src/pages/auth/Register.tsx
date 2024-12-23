@@ -10,7 +10,12 @@ import { toast } from 'react-toastify';
 import { IRegisterValues } from '../../types/types';
 import { loginSuccess } from '../../redux/features/authSlice';
 import { useDispatch } from 'react-redux';
-import Button from '../../components/buttons/Button';
+import CommonHeader from '../components/auth/CommonHeader';
+import image from "../../assets/images/auth/image.png";
+import { AdditionalBody } from './utils/common';
+import { TitleText } from '../../utils/Common';
+import AuthButton from '../../components/buttons/Button';
+
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
@@ -52,8 +57,14 @@ const Register: React.FC = () => {
   }, [registerUser, navigate, dispatch]);
 
   return (
-    <>
-      <div>
+      <CommonHeader
+          image={image}
+          primaryHeading={<TitleText text="Welcome Back to" />}
+          secondaryHeading="Sign In"
+          paragraph="Sign in to get back to your account."
+          type="sign-in"
+          additionBody={<AdditionalBody title="Alreadu have an account?" action='signin' path="/auth/sign-in" />}
+      >
         <Formik
           initialValues={{ email: '', password: '', confirm_password: '', username: '' }}
           validationSchema={registerSchema}
@@ -87,12 +98,11 @@ const Register: React.FC = () => {
                 leftIcon={<FaLock color={IconColors.color} />}
                 rightIcon={<FaEye color={IconColors.color} />}
               />
-              <Button text="Register" isSubmitting={isSubmitting} />
+              <AuthButton text="Register" isSubmitting={isSubmitting} />
             </Form>
           )}
         </Formik>
-      </div>
-    </>
+      </CommonHeader>
   );
 };
 

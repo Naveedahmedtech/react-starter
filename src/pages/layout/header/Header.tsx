@@ -4,7 +4,7 @@ import LeftSidebar from "./components/LeftSidebar";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const Header = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768); // Open on larger screens by default
+    const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
