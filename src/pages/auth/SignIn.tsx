@@ -13,7 +13,7 @@ import { updateUserData } from '../../redux/features/authSlice';
 import { useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
 import { TitleText } from '../../utils/Common';
-import AuthButton from '../../components/buttons/Button';
+import Button from '../../components/buttons/Button';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -88,7 +88,7 @@ const SignIn = () => {
                 leftIcon={<FaLock color={IconColors.color} />}
                 rightIcon={<FaEye color={IconColors.color} />}
               />
-              <AuthButton text="Sign in" isSubmitting={isSubmitting} />
+              <Button text="Sign in" isSubmitting={isSubmitting} type={'submit'} />
             </Form>
           )}
         </Formik>

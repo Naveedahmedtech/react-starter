@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LeftSidebar from "./components/LeftSidebar";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import ThemeToggle from "../../../components/ThemeToggle/";
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
@@ -40,11 +41,12 @@ const Header = () => {
             )}
 
             {/* Main Content Area */}
-            <div className={`flex-1 flex flex-col overflow-auto mt-10 ${isSidebarOpen ? "ml-6" : "ml-0"} transition-all duration-500`}>
-                <div className="py-4 px-2 pt-24 md:pt-12 custom-scrollbar">
+            <div className={`flex-1 flex flex-col overflow-auto mt-20 ${isSidebarOpen ? "ml-6" : "ml-6"} transition-all duration-500`}>
+                <div className="px-2 custom-scrollbar">
                     <Outlet />
                 </div>
             </div>
+            <ThemeToggle />
         </div>
     );
 };

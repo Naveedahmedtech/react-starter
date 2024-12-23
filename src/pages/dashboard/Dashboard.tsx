@@ -5,7 +5,7 @@ const Dashboard: React.FC = () => {
 
     return (
         <div>
-            <main className="p-4">
+            <main className="">
                Welcome to the Dashboard!
             </main>
         </div>

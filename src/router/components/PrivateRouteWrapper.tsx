@@ -5,6 +5,7 @@ import PageLoader from '../../components/PageLoader';
 import { useLogoutMutation } from '../../redux/features/authApi';
 import { apiFetch } from '../../server/api';
 import { APP_ROUTES } from '../../constant/APP_ROUTES';
+import {API_METHOD, API_ROUTES} from "../../constant/API_ROUTES.ts";
 
 const PrivateRouteWrapper = () => {
     const { userData, updateToken } = useAuth();
@@ -13,8 +14,8 @@ const PrivateRouteWrapper = () => {
 
     const fetchUserData = async () => {
         try {
-            const data = await apiFetch('users/by-token', {
-                method: 'GET',
+            const data = await apiFetch(API_ROUTES.USER.BY_TOKEN, {
+                method: API_METHOD.GET,
             });
             if (data?.result) {
                 updateToken({ isLoggedIn: true, userData: data.result });
@@ -37,15 +38,27 @@ const PrivateRouteWrapper = () => {
     };
 
     useEffect(() => {
-        setIsLoading(true);
-        fetchUserData();
+        let isMounted = true;
+
+        const fetchData = async () => {
+            setIsLoading(true);
+            await fetchUserData();
+            if (isMounted) setIsLoading(false);
+        };
+
+        fetchData();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
+
 
     if (isLoading) {
         return <PageLoader />;
     }
 
-    if (!userData?.isLoggedIn) {
+    if (userData?.isLoggedIn) {
         return <Navigate to={APP_ROUTES.AUTH.SIGN_IN} />;
     }
 

@@ -14,7 +14,7 @@ import CommonHeader from '../components/auth/CommonHeader';
 import image from "../../assets/images/auth/image.png";
 import { AdditionalBody } from './utils/common';
 import { TitleText } from '../../utils/Common';
-import AuthButton from '../../components/buttons/Button';
+import Button from '../../components/buttons/Button';
 
 
 const Register: React.FC = () => {
@@ -98,7 +98,7 @@ const Register: React.FC = () => {
                 leftIcon={<FaLock color={IconColors.color} />}
                 rightIcon={<FaEye color={IconColors.color} />}
               />
-              <AuthButton text="Register" isSubmitting={isSubmitting} />
+              <Button text="Register" isSubmitting={isSubmitting} type={'submit'} />
             </Form>
           )}
         </Formik>
